@@ -1,0 +1,6 @@
+org.xwiki.contrib.authservice.internal.AuthServiceBridgeInitializer
+org.xwiki.security.authservice.internal.AuthenticationServiceConfiguration
+org.xwiki.security.authservice.internal.AuthenticationServiceConfigurationInvalidator
+org.xwiki.security.authservice.internal.DefaultXWikiAuthServiceComponent
+org.xwiki.security.authservice.internal.StandardXWikiAuthServiceComponent
+org.xwiki.security.authservice.script.AuthenticationServiceScriptService

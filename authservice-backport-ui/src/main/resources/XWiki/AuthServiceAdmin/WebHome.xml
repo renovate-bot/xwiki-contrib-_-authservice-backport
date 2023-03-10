@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<xwikidoc version="1.5" reference="XWiki.AuthServiceAdmin.WebHome" locale="">
+  <web>XWiki.AuthServiceAdmin</web>
+  <name>WebHome</name>
+  <language/>
+  <defaultLanguage/>
+  <translation>0</translation>
+  <creator>xwiki:XWiki.Admin</creator>
+  <creationDate>1678446336000</creationDate>
+  <parent>XWiki.WebHome</parent>
+  <author>xwiki:XWiki.Admin</author>
+  <originalMetadataAuthor>XWiki.superadmin</originalMetadataAuthor>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <date>1678465534000</date>
+  <contentUpdateDate>1678446336000</contentUpdateDate>
+  <version>1.1</version>
+  <title/>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>xwiki/2.1</syntaxId>
+  <hidden>false</hidden>
+  <content/>
+  <object>
+    <name>XWiki.AuthServiceAdmin.WebHome</name>
+    <number>0</number>
+    <className>XWiki.ConfigurableClass</className>
+    <guid>d4f85274-51ac-42ec-ae7d-544281f2f4fc</guid>
+    <class>
+      <name>XWiki.ConfigurableClass</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <categoryIcon>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <hint/>
+        <name>categoryIcon</name>
+        <number>11</number>
+        <picker>0</picker>
+        <prettyName>categoryIcon</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </categoryIcon>
+      <codeToExecute>
+        <contenttype>VelocityWiki</contenttype>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <editor>---</editor>
+        <hint/>
+        <name>codeToExecute</name>
+        <number>7</number>
+        <picker>0</picker>
+        <prettyName>codeToExecute</prettyName>
+        <rows>5</rows>
+        <size>40</size>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+      </codeToExecute>
+      <configurationClass>
+        <cache>0</cache>
+        <classname/>
+        <customDisplay/>
+        <defaultValue/>
+        <disabled>0</disabled>
+        <displayType>input</displayType>
+        <freeText/>
+        <hint/>
+        <idField/>
+        <largeStorage>0</largeStorage>
+        <multiSelect>0</multiSelect>
+        <name>configurationClass</name>
+        <number>3</number>
+        <picker>1</picker>
+        <prettyName>configurationClass</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators/>
+        <size>30</size>
+        <sort>none</sort>
+        <sql/>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <valueField/>
+        <classType>com.xpn.xwiki.objects.classes.PageClass</classType>
+      </configurationClass>
+      <displayBeforeCategory>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <hint/>
+        <name>displayBeforeCategory</name>
+        <number>10</number>
+        <picker>0</picker>
+        <prettyName>displayBeforeCategory</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </displayBeforeCategory>
+      <displayInCategory>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <hint/>
+        <name>displayInCategory</name>
+        <number>9</number>
+        <picker>0</picker>
+        <prettyName>displayInCategory</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </displayInCategory>
+      <displayInSection>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <hint/>
+        <name>displayInSection</name>
+        <number>1</number>
+        <picker>0</picker>
+        <prettyName>displayInSection</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </displayInSection>
+      <heading>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <hint/>
+        <name>heading</name>
+        <number>2</number>
+        <picker>0</picker>
+        <prettyName>heading</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </heading>
+      <iconAttachment>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <hint/>
+        <name>iconAttachment</name>
+        <number>8</number>
+        <picker>0</picker>
+        <prettyName>iconAttachment</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </iconAttachment>
+      <linkPrefix>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <hint/>
+        <name>linkPrefix</name>
+        <number>5</number>
+        <picker>0</picker>
+        <prettyName>linkPrefix</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </linkPrefix>
+      <propertiesToShow>
+        <cache>0</cache>
+        <customDisplay/>
+        <defaultValue/>
+        <disabled>0</disabled>
+        <displayType>input</displayType>
+        <freeText/>
+        <hint/>
+        <largeStorage>0</largeStorage>
+        <multiSelect>1</multiSelect>
+        <name>propertiesToShow</name>
+        <number>6</number>
+        <picker>0</picker>
+        <prettyName>propertiesToShow</prettyName>
+        <relationalStorage>1</relationalStorage>
+        <separator> </separator>
+        <separators> ,|</separators>
+        <size>20</size>
+        <sort>none</sort>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <values/>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </propertiesToShow>
+      <scope>
+        <cache>0</cache>
+        <customDisplay/>
+        <defaultValue/>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <freeText/>
+        <hint/>
+        <largeStorage>0</largeStorage>
+        <multiSelect>0</multiSelect>
+        <name>scope</name>
+        <number>12</number>
+        <picker>1</picker>
+        <prettyName>scope</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators>|, </separators>
+        <size>1</size>
+        <sort/>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <values>WIKI|SPACE|ALL_SPACES|WIKI+ALL_SPACES</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </scope>
+      <sectionOrder>
+        <customDisplay/>
+        <disabled>0</disabled>
+        <hint/>
+        <name>sectionOrder</name>
+        <number>12</number>
+        <numberType>integer</numberType>
+        <prettyName>sectionOrder</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <validationMessage/>
+        <validationRegExp/>
+        <classType>com.xpn.xwiki.objects.classes.NumberClass</classType>
+      </sectionOrder>
+    </class>
+    <property>
+      <categoryIcon/>
+    </property>
+    <property>
+      <codeToExecute>=== {{translation key="security.authservice.admin.title"/}}
+
+{{velocity}}
+#if ($request.setauthservice &amp;&amp; $request.authServiceId)
+  $services.security.authService.setAuthService($request.authServiceId)
+#end
+{{/velocity}}
+
+{{velocity}}
+#set ($mainAuthService = $services.security.authService.getMainAuthService())
+#set ($configuredAuthClass = $services.security.authService.getAuthService())
+#if ($mainAuthService.id == 'default')
+  #set ($authServiceType = 'default')
+#elseif ($configuredAuthClass &amp;&amp; ($mainAuthService.class.name == $configuredAuthClass || $mainAuthService.class.name == 'com.xpn.xwiki.user.impl.xwiki.XWikiAuthServiceImpl'))
+  #set ($authServiceType = 'class')
+#else
+  #set ($authServiceType = 'other')
+#end
+
+{{box}}
+  #set ($authService = $services.security.authService.getAuthService())
+  #set ($authServiceName = $services.localization.get("security.authservice.service.${authService.id}.name"))
+  #if ($authServiceName)
+    **{{translation key="security.authservice.service.${authService.id}.name"/}}** (//$authService.class.name//)
+    #set ($authServiceDescription = $services.localization.get("security.authservice.service.${authService.id}.description"))
+    #if ($authServiceDescription)
+      {{translation key="security.authservice.service.${authService.id}.description"/}}
+    #end
+  #else
+    $authService.class.name
+  #end
+{{/box}}
+
+#if ($authServiceType == 'default')
+  #set ($authServices = $services.security.authService.getAuthServices())
+  #if ($authServices.size() &gt; 1)
+    {{html}}
+      &lt;form action="$xwiki.relativeRequestURL" method="post"&gt;
+        $escapetool.xml($services.localization.render("security.authservice.admin.default.label"))
+        &lt;select name="authServiceId" id="authServiceId"&gt;
+        #foreach ($availableAuthService in $authServices)
+          &lt;option#if ($availableAuthService.id == $authService.id) selected#end value="$escapetool.xml($availableAuthService.id)" title="$escapetool.xml($services.localization.render("security.authservice.service.${availableAuthService.id}.description"))"&gt;
+            $escapetool.xml($services.localization.render("security.authservice.service.${availableAuthService.id}.name"))
+          &lt;/option&gt;
+        #end
+        &lt;/select&gt;
+        &lt;button class="btn btn-danger" name="setauthservice"&gt;$escapetool.xml($services.localization.render("security.authservice.admin.default.save"))&lt;/button&gt;
+      &lt;/form&gt;
+    {{/html}}
+  #else
+    {{info}}{{translation key="security.authservice.admin.default.noService"/}}{{/info}}
+  #end
+#else
+  #if ($authServiceType == 'other')
+    {{warning}}{{translation key="security.authservice.admin.other.warning"/}}{{/warning}}
+  #elseif ($authServiceType == 'class')
+    {{warning}}{{translation key="security.authservice.admin.class.warning"/}}{{/warning}}
+  #end
+#end
+{{/velocity}}</codeToExecute>
+    </property>
+    <property>
+      <configurationClass/>
+    </property>
+    <property>
+      <displayBeforeCategory/>
+    </property>
+    <property>
+      <displayInCategory/>
+    </property>
+    <property>
+      <displayInSection>Authentication</displayInSection>
+    </property>
+    <property>
+      <heading/>
+    </property>
+    <property>
+      <iconAttachment/>
+    </property>
+    <property>
+      <linkPrefix/>
+    </property>
+    <property>
+      <propertiesToShow/>
+    </property>
+    <property>
+      <scope>WIKI</scope>
+    </property>
+    <property>
+      <sectionOrder/>
+    </property>
+  </object>
+</xwikidoc>
