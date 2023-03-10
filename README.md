@@ -1,9 +1,9 @@
-# Authentication Component Backport
+# Authentication Service Backport
 
-Add support for component based authenticators to versions older than 15.0.
+Add support for component based authenticators to versions older than 15.2.
 
 * Project Lead: [Thomas Mortagne](http://www.xwiki.org/xwiki/bin/view/XWiki/ThomasMortagne)
-* [Documentation & Downloads](https://extensions.xwiki.org/xwiki/bin/view/Extension/AuthenticationComponentBackport)
+* [Documentation & Downloads](https://extensions.xwiki.org/xwiki/bin/view/Extension/AuthServiceBackport)
 * [Issue Tracker](http://jira.xwiki.org/browse/AUTHSBACK)
 * Communication: [Forum](https://forum.xwiki.org), [Chat](https://dev.xwiki.org/xwiki/bin/view/Community/Chat)
 * [Development Practices](http://dev.xwiki.org)
@@ -11,4 +11,4 @@ Add support for component based authenticators to versions older than 15.0.
 * License: LGPL 2.1
 * Translations: ?
 * Sonar Dashboard: N/A
-* Continuous Integration Status: [![Build Status](https://ci.xwiki.org/buildStatus/icon?job=XWiki+Contrib%2Fauthenticator-component-backport%2Fmaster)](https://ci.xwiki.org/job/XWiki%20Contrib/job/authenticator-component-backport/job/master/)
+* Continuous Integration Status: [![Build Status](https://ci.xwiki.org/buildStatus/icon?job=XWiki+Contrib%2Fauthenticator-component-backport%2Fmaster)](https://ci.xwiki.org/job/XWiki%20Contrib/job/authservice-backport/job/master/)
