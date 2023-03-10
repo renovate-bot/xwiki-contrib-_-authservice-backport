@@ -30,7 +30,7 @@
 
   <artifactId>authservice-backport</artifactId>
   <name>AuthService Backport</name>
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <description>Allow adding support for component based authenticator in XWiki versions older than 15.0</description>
 
@@ -59,6 +59,6 @@
     <connection>scm:git:git://github.com/xwiki-contrib/authservice-backport.git</connection>
     <developerConnection>scm:git:git@github.com:xwiki-contrib/authservice-backport.git</developerConnection>
     <url>https://github.com/xwiki-contrib/authservice-backport/tree/master</url>
-    <tag>authservice-backport-1.0.0</tag>
+    <tag>HEAD</tag>
   </scm>
 </project>
