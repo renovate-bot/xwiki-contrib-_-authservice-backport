@@ -37,6 +37,8 @@ import org.xwiki.security.authservice.XWikiAuthServiceComponent;
 
 import com.xpn.xwiki.XWiki;
 import com.xpn.xwiki.XWikiContext;
+import com.xpn.xwiki.user.api.XWikiAuthService;
+import com.xpn.xwiki.user.impl.xwiki.XWikiAuthServiceImpl;
 
 /**
  * Automatically register the bridge as authenticator at startup (unless there is already a configured authenticator).
@@ -85,8 +87,12 @@ public class AuthServiceBridgeInitializer extends AbstractEventListener implemen
         String authServiceClass = this.xwikicfg.getProperty("xwiki.authentication.authclass");
 
         if (authServiceClass == null) {
-            // Register the bridge as authenticator
-            xwiki.setAuthService(this.auth);
+            // If another authenticator already dynamically registered itself that way, don't override it
+            XWikiAuthService currentAuthService = xwiki.getAuthService();
+            if (currentAuthService == null || currentAuthService.getClass() == XWikiAuthServiceImpl.class) {
+                // Register the bridge as authenticator
+                xwiki.setAuthService(this.auth);
+            }
         }
     }
 
