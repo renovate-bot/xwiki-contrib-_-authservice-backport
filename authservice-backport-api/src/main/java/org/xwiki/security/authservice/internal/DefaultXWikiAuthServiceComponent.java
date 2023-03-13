@@ -53,6 +53,8 @@ public class DefaultXWikiAuthServiceComponent implements XWikiAuthServiceCompone
 
     @Inject
     @Named(StandardXWikiAuthServiceComponent.ID)
+    private Provider<XWikiAuthServiceComponent> standardAuthenticatorProvider;
+
     private XWikiAuthServiceComponent standardAuthenticator;
 
     @Inject
@@ -61,6 +63,15 @@ public class DefaultXWikiAuthServiceComponent implements XWikiAuthServiceCompone
 
     @Inject
     private Logger logger;
+
+    private XWikiAuthServiceComponent getStandardXWikiAuthService()
+    {
+        if (this.standardAuthenticator == null) {
+            this.standardAuthenticator = this.standardAuthenticatorProvider.get();
+        }
+
+        return this.standardAuthenticator;
+    }
 
     /**
      * @return the XWikiAuthService in the current context
@@ -88,7 +99,7 @@ public class DefaultXWikiAuthServiceComponent implements XWikiAuthServiceCompone
         }
 
         // Fallback on the standard authenticator
-        return this.standardAuthenticator;
+        return getStandardXWikiAuthService();
     }
 
     @Override
