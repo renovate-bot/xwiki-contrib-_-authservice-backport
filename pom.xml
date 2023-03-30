@@ -41,6 +41,7 @@
 
   <modules>
     <module>authservice-backport-api</module>
+    <module>authservice-backport-default</module>
     <module>authservice-backport-ui</module>
   </modules>
 
@@ -61,4 +62,78 @@
     <url>https://github.com/xwiki-contrib/authservice-backport/tree/master</url>
     <tag>HEAD</tag>
   </scm>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.revapi</groupId>
+        <artifactId>revapi-maven-plugin</artifactId>
+        <configuration>
+          <analysisConfiguration><![CDATA[
+            {
+              "revapi": {
+                "ignore" : [
+                  {
+                    "code": "java.class.externalClassNoLongerExposedInAPI",
+                    "old": "class org.xwiki.component.phase.Disposable",
+                    "justification": "Experimental"
+                  },
+                  {
+                    "code": "java.class.externalClassNoLongerExposedInAPI",
+                    "old": "class org.xwiki.component.phase.Initializable",
+                    "justification": "Experimental"
+                  },
+                  {
+                    "code": "java.class.removed",
+                    "old": "class org.xwiki.contrib.authservice.internal.AuthServiceBridgeInitializer",
+                    "justification": "Experimental"
+                  },
+                  {
+                    "code": "java.class.externalClassNoLongerExposedInAPI",
+                    "old": "class org.xwiki.observation.AbstractEventListener",
+                    "justification": "Experimental"
+                  },
+                  {
+                    "code": "java.class.externalClassNoLongerExposedInAPI",
+                    "old": "class org.xwiki.observation.EventListener",
+                    "justification": "Experimental"
+                  },
+                  {
+                    "code": "java.class.externalClassNoLongerExposedInAPI",
+                    "old": "class org.xwiki.script.service.ScriptService",
+                    "justification": "Experimental"
+                  },
+                  {
+                    "code": "java.class.removed",
+                    "old": "class org.xwiki.security.authservice.internal.AuthenticationServiceConfiguration",
+                    "justification": "Experimental"
+                  },
+                  {
+                    "code": "java.class.removed",
+                    "old": "class org.xwiki.security.authservice.internal.AuthenticationServiceConfigurationInvalidator",
+                    "justification": "Experimental"
+                  },
+                  {
+                    "code": "java.class.removed",
+                    "old": "class org.xwiki.security.authservice.internal.DefaultXWikiAuthServiceComponent",
+                    "justification": "Experimental"
+                  },
+                  {
+                    "code": "java.class.removed",
+                    "old": "class org.xwiki.security.authservice.internal.StandardXWikiAuthServiceComponent",
+                    "justification": "Experimental"
+                  },
+                  {
+                    "code": "java.class.removed",
+                    "old": "class org.xwiki.security.authservice.script.AuthenticationServiceScriptService",
+                    "justification": "Experimental"
+                  }
+                ]
+              }
+            }
+          ]]></analysisConfiguration>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

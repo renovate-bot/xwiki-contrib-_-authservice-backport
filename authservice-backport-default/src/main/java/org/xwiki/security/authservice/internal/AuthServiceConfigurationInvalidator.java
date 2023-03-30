@@ -44,9 +44,9 @@ import com.xpn.xwiki.internal.event.XObjectPropertyUpdatedEvent;
  * @version $Id$
  */
 @Component
-@Named(AuthenticationServiceConfigurationInvalidator.NAME)
+@Named(AuthServiceConfigurationInvalidator.NAME)
 @Singleton
-public class AuthenticationServiceConfigurationInvalidator extends AbstractEventListener
+public class AuthServiceConfigurationInvalidator extends AbstractEventListener
 {
     /**
      * The name of this event listener (and its component hint at the same time).
@@ -54,18 +54,18 @@ public class AuthenticationServiceConfigurationInvalidator extends AbstractEvent
     public static final String NAME = "AuthenticationServiceConfigurationInvalidator";
 
     private static final EntityReference PROPERTY_REFERENCE_MATCHER =
-        new EntityReference(AuthenticationServiceConfiguration.CONFIGURATION_WIKI_PROPERTY, EntityType.OBJECT_PROPERTY,
+        new EntityReference(AuthServiceConfiguration.CONFIGURATION_WIKI_PROPERTY, EntityType.OBJECT_PROPERTY,
             new RegexEntityReference(Pattern.compile(
-                "([^:]*:)?" + Pattern.quote(AuthenticationServiceConfiguration.CLASS_REFERENCE_STRING) + "\\[\\d*\\]"),
+                "([^:]*:)?" + Pattern.quote(AuthServiceConfiguration.CLASS_REFERENCE_STRING) + "\\[\\d*\\]"),
                 EntityType.OBJECT));
 
     @Inject
-    private AuthenticationServiceConfiguration configuration;
+    private AuthServiceConfiguration configuration;
 
     /**
      * Default constructor.
      */
-    public AuthenticationServiceConfigurationInvalidator()
+    public AuthServiceConfigurationInvalidator()
     {
         super(NAME, new WikiDeletedEvent(), new XObjectPropertyAddedEvent(PROPERTY_REFERENCE_MATCHER),
             new XObjectPropertyUpdatedEvent(PROPERTY_REFERENCE_MATCHER),

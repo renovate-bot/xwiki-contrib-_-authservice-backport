@@ -42,18 +42,19 @@ import com.xpn.xwiki.doc.XWikiDocument;
 import com.xpn.xwiki.objects.BaseObject;
 
 /**
- * A backport of AuthenticationConfiguration#getAuthenticationService.
+ * Store and read the configured auth service.
  * 
  * @version $Id$
+ * @since 15.3RC1
  */
-@Component(roles = AuthenticationServiceConfiguration.class)
+@Component(roles = AuthServiceConfiguration.class)
 @Singleton
-public class AuthenticationServiceConfiguration
+public class AuthServiceConfiguration
 {
     /**
      * The spaces in which the authentication configuration is stored.
      */
-    public static final List<String> SPACE_NAMES = Arrays.asList("XWiki", "Authentication");
+    public static final List<String> SPACE_NAMES = Arrays.asList("XWiki", "AuthService");
 
     /**
      * The reference of the class holding the configuration of the authentication.
@@ -64,7 +65,7 @@ public class AuthenticationServiceConfiguration
     /**
      * The serialized reference of the class holding the configuration of the authentication.
      */
-    public static final String CLASS_REFERENCE_STRING = "XWiki.Authentication.ConfigurationClass";
+    public static final String CLASS_REFERENCE_STRING = "XWiki.AuthService.ConfigurationClass";
 
     /**
      * The reference of the document holding the configuration of the authentication.
@@ -74,7 +75,7 @@ public class AuthenticationServiceConfiguration
     /**
      * The name of the property containing the identifier of the authenticator in the wiki.
      */
-    public static final String CONFIGURATION_WIKI_PROPERTY = "authService";
+    public static final String CONFIGURATION_WIKI_PROPERTY = "service";
 
     /**
      * The name of the property containing the identifier of the authenticator in the xwiki.properties file.
@@ -105,14 +106,14 @@ public class AuthenticationServiceConfiguration
      * @return the hint of the configured authentication service
      * @throws XWikiException when failing to load the configuration
      */
-    public String getAuthenticationService() throws XWikiException
+    public String getAuthService() throws XWikiException
     {
         XWikiContext xcontext = this.xcontextProvider.get();
 
         // TODO: Try at current wiki level
 
         // Try at main wiki level
-        String service = getAuthenticationService(new WikiReference(xcontext.getMainXWiki()), xcontext);
+        String service = getAuthService(new WikiReference(xcontext.getMainXWiki()), xcontext);
         if (service != null) {
             return service;
         }
@@ -121,12 +122,12 @@ public class AuthenticationServiceConfiguration
         return this.configurationSource.getProperty(CONFIGURATION_INSTANCE_PROPERTY);
     }
 
-    private String getAuthenticationService(WikiReference wiki, XWikiContext xcontext) throws XWikiException
+    private String getAuthService(WikiReference wiki, XWikiContext xcontext) throws XWikiException
     {
         ServiceCacheEntry service = this.serviceCache.get(wiki.getName());
 
         if (service == null) {
-            service = new ServiceCacheEntry(loadAuthenticationService(wiki, xcontext));
+            service = new ServiceCacheEntry(loadAuthServiceId(wiki, xcontext));
 
             this.serviceCache.put(wiki.getName(), service);
         }
@@ -134,18 +135,24 @@ public class AuthenticationServiceConfiguration
         return service.name;
     }
 
-    private String loadAuthenticationService(WikiReference wiki, XWikiContext xcontext) throws XWikiException
+    private String loadAuthServiceId(WikiReference wiki, XWikiContext xcontext) throws XWikiException
     {
         XWikiDocument configurationDocument =
             xcontext.getWiki().getDocument(new DocumentReference(DOC_REFERENCE, wiki), xcontext);
         BaseObject configurationObject = configurationDocument.getXObject(CLASS_REFERENCE);
 
-        String serviceName = configurationObject.getStringValue(CONFIGURATION_WIKI_PROPERTY);
+        if (configurationObject != null) {
+            String serviceId = configurationObject.getStringValue(CONFIGURATION_WIKI_PROPERTY);
 
-        return StringUtils.isBlank(serviceName) ? null : serviceName;
+            if (StringUtils.isNotBlank(serviceId)) {
+                return serviceId;
+            }
+        }
+
+        return null;
     }
 
-    private void setAuthenticationService(String id, WikiReference wiki, XWikiContext xcontext) throws XWikiException
+    private void setAuthService(String id, WikiReference wiki, XWikiContext xcontext) throws XWikiException
     {
         XWikiDocument configurationDocument =
             xcontext.getWiki().getDocument(new DocumentReference(DOC_REFERENCE, wiki), xcontext);
@@ -160,11 +167,11 @@ public class AuthenticationServiceConfiguration
      * @param id the identifier of the authenticator
      * @throws XWikiException when failing to update the configuration
      */
-    public void setAuthenticationService(String id) throws XWikiException
+    public void setAuthService(String id) throws XWikiException
     {
         XWikiContext xcontext = this.xcontextProvider.get();
 
-        setAuthenticationService(id, new WikiReference(xcontext.getMainXWiki()), xcontext);
+        setAuthService(id, new WikiReference(xcontext.getMainXWiki()), xcontext);
     }
 
     /**

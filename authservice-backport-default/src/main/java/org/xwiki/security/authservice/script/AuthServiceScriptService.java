@@ -36,7 +36,7 @@ import org.xwiki.security.authorization.AccessDeniedException;
 import org.xwiki.security.authorization.AuthorizationManager;
 import org.xwiki.security.authorization.Right;
 import org.xwiki.security.authservice.XWikiAuthServiceComponent;
-import org.xwiki.security.authservice.internal.AuthenticationServiceConfiguration;
+import org.xwiki.security.authservice.internal.AuthServiceConfiguration;
 import org.xwiki.security.authservice.internal.DefaultXWikiAuthServiceComponent;
 import org.xwiki.security.script.SecurityScriptService;
 
@@ -51,9 +51,9 @@ import com.xpn.xwiki.user.api.XWikiAuthService;
  * @version $Id: 85ca4824a28cf6339c29e5016b827b321209b669 $
  */
 @Component
-@Named(SecurityScriptService.ROLEHINT + '.' + AuthenticationServiceScriptService.ID)
+@Named(SecurityScriptService.ROLEHINT + '.' + AuthServiceScriptService.ID)
 @Singleton
-public class AuthenticationServiceScriptService implements ScriptService
+public class AuthServiceScriptService implements ScriptService
 {
     /**
      * The role hint of this component.
@@ -69,7 +69,7 @@ public class AuthenticationServiceScriptService implements ScriptService
     private ConfigurationSource xwikicfg;
 
     @Inject
-    private AuthenticationServiceConfiguration configuration;
+    private AuthServiceConfiguration configuration;
 
     @Inject
     private Provider<XWikiContext> contextProvider;
@@ -166,6 +166,6 @@ public class AuthenticationServiceScriptService implements ScriptService
     {
         checkWikiAdmin();
 
-        this.configuration.setAuthenticationService(id);
+        this.configuration.setAuthService(id);
     }
 }

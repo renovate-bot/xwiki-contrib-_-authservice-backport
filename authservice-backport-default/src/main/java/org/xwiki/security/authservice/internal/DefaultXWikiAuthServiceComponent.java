@@ -49,7 +49,7 @@ import com.xpn.xwiki.user.api.XWikiUser;
 public class DefaultXWikiAuthServiceComponent implements XWikiAuthServiceComponent
 {
     @Inject
-    private AuthenticationServiceConfiguration configuration;
+    private AuthServiceConfiguration configuration;
 
     @Inject
     @Named(StandardXWikiAuthServiceComponent.ID)
@@ -80,7 +80,7 @@ public class DefaultXWikiAuthServiceComponent implements XWikiAuthServiceCompone
     public XWikiAuthService getAuthService() throws XWikiException
     {
         // Get the configured authenticator
-        String authHint = this.configuration.getAuthenticationService();
+        String authHint = this.configuration.getAuthService();
 
         // Resolve the corresponding authenticator
         ComponentManager componentManager = this.componentManagerProvider.get();
