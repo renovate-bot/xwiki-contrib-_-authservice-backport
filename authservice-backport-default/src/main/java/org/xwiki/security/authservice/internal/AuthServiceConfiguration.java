@@ -156,7 +156,7 @@ public class AuthServiceConfiguration
     {
         XWikiDocument configurationDocument =
             xcontext.getWiki().getDocument(new DocumentReference(DOC_REFERENCE, wiki), xcontext);
-        BaseObject configurationObject = configurationDocument.getXObject(CLASS_REFERENCE);
+        BaseObject configurationObject = configurationDocument.getXObject(CLASS_REFERENCE, true, xcontext);
 
         configurationObject.setStringValue(CONFIGURATION_WIKI_PROPERTY, StringUtils.defaultString(id));
 
